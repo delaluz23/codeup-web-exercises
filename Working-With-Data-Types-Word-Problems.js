@@ -35,10 +35,10 @@ and the class schedule does not conflict with her current schedule.
 let ClassFull = false;
 let ConflictSchedule = false;
 if(!ClassFull && !ConflictSchedule){
-    console.log("you can be enrolled")
+    console.log("you can't enroll :(")
 }
 else{
-    console.log("you can't enroll :(")
+    console.log("you can be enrolled ")
 }
 
 /*
@@ -46,19 +46,23 @@ A product offer can be applied only if a person buys more than 2 items
 , and the offer has not expired. Premium members do not need to buy
 a specific amount of products.
  */
-
-let RegularMember = true;
-let ItemOffer = 2;
-let buys = prompt("how much items did you buy")
-parseInt(buys);
-if (RegularMember){
-    if(buys >= ItemOffer){
-        console.log("you are eligible for the product offer!")
-    }else{
-        console.log("You aren't eligible for the product off:(")
+let OfferExpired = false;
+if(!OfferExpired){
+    let RegularMember = true;
+    let ItemOffer = 2;
+    let buys = prompt("how much items did you buy");
+    parseInt(buys);
+    if (RegularMember){
+        if(buys >= ItemOffer){
+            console.log("you are eligible for the product offer!")
+        }else{
+            console.log("You aren't eligible for the product off:(")
+        }
     }
-}
-if(!RegularMember) {
-    console.log("You're a Premium Member and are eligible for the product offer")
+    if(!RegularMember) {
+        console.log("You're a Premium Member and are eligible for the product offer")
+    }
+}else{
+    console.log("the offer is expired")
 }
 
