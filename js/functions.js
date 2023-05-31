@@ -97,10 +97,67 @@ function applyDiscont(price, discountPercentage){
 }
 alert(applyDiscont())
 
+//Make a function isOdd(number)
+
+function isOdd(number){
+    if(number % 2 !== 0){
+        return"is odd"
+    }
+    else{
+        return"isn't odd"
+    }
+}
+ console.log(${random} + " " + isOdd(random));
+
+
+//make a function named isEven(number)
+
+function isEven(number){
+    if(number % 2 === 0){
+        return"is even"
+    }
+    else{
+        return"isn't even"
+    }
+}
+
+console.log(random + " " + isEven(random))
 
 
 
+//make a function named identity(input) that returns the input exactly as provided
 
+function identity(input){
+    input = prompt("whats your identity");
+    return"your identity = " + input;
+}
+
+console.log(identity());
+
+
+//make a function named isFive(input)
+
+function isFive(input){
+    if (input === 5 || input === "five" || input === "Five" || input === "FIVE") {
+        return "youre input " + input + " is five";
+    } else {
+        return "I told you i didn't care";
+    }
+
+}
+let input = prompt("enter five or not i dont care");
+console.log(isFive(input));
+
+
+//make a function named addFive(input) that adds five to some input
+
+let usernum = parseInt(prompt("give me a random number bozo"));
+
+function addFive(input){
+    return input + 5;
+}
+
+alert("wow i just added 5 to you're number and now you have -> " + addFive(usernum))
 
 
 
