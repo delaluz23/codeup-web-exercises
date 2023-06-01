@@ -193,17 +193,18 @@ calculateTotal(luckyNumber, Totalbill);
 
 function MathStuff(number){
     if (number % 2 === 0){
-        alert("You're number is even steven")
         alert(`You're number :${number} + 100 = ${number + 100}`)
         if(number > 0){
             alert(`You're number ${number} is a positive number`)
+            alert("You're number is even steven 🤙🏼")
         } else if (number < 0){
             alert(`You're number ${number} is a negative number`)
-        }else {
-            alert("You're number is 0")
+            alert("You're number is even steven 🤙🏼")
+        }else if ( number === 0) {
+            alert("You're number is 0 neither odd or even")
         }
     } else {
-        alert("You're number is odd todd")
+        alert("You're number is odd todd 🤙🏼")
         alert(`You're number :${number} + 100 = ${number + 100}`)
         if(number > 0){
             alert(`You're number ${number} is a positive number`)
@@ -218,8 +219,8 @@ function MathStuff(number){
 function Prompt(confirmation){
     if(confirmation){
         let number = parseInt(prompt("Enter a number"))
-            if(number === String){
-                alert("That is not a number dude")
+            if(isNaN(number)){
+                return alert("That is not a number dude ");
             }
         return MathStuff(number);
     }else{
