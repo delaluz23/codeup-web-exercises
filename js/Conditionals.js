@@ -223,7 +223,7 @@ function Prompt(confirmation){
             }
         return MathStuff(number);
     }else{
-        alert(window.open("https://www.youtube.com/watch?v=ojX6zfsOqjQ", "_blank"))
+        alert(window.open("https://www.youtube.com/watch?v=eZUR1SSNj6g", "_blank"))
     }
 }
 Prompt(confirm("Do you want to enter a number?"))
