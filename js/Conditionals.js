@@ -26,15 +26,15 @@
 
 // function analyzeColor(colorInput){
 //     if(colorInput === "red"){
-//         console.log("strawberries are red");
+//         return("strawberries are red");
 //     }else if(colorInput === "blue"){
-//         console.log("blue is the color of the sky");
+//         return("blue is the color of the sky");
 //     }else if(colorInput === "purple"){
-//         console.log("grimace is purple");
+//         return("grimace is purple");
 //     }else if(colorInput === "yellow"){
-//         console.log("don't eat yellow snow");
+//         return("don't eat yellow snow");
 //     }else if(colorInput === "pink"){
-//         console.log("some flamingos are pink");
+//         return("some flamingos are pink");
 //     }else{
 //         return `idk anything about ${colorInput}`;
 //     }
@@ -91,7 +91,7 @@ switch (randomColor){
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-(function analyzeColor(colorInput){
+(function analyzeColor(){
     let color = prompt("Enter your favorite color");
     if(color === "red"){
         alert("strawberries are red");
@@ -135,25 +135,24 @@ function calculateTotal(LuckyNumber, price){
    let TotalDiscount;
    if(LuckyNumber === 0){
        TotalDiscount = (price - (0));
-
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %0 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %0 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else if(LuckyNumber === 1){
        TotalDiscount = (price - (price * .1));
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %10 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %10 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else if(LuckyNumber === 2){
        TotalDiscount = (price - (price * .25));
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %25 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %25 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else if(LuckyNumber === 3){
        TotalDiscount = (price - (price * .35));
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %35 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %35 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else if(LuckyNumber === 4){
        TotalDiscount = (price - (price * .5));
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %50 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %50 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else if(LuckyNumber === 5){
        TotalDiscount = (price - price);
-       alert(`You're lucky number is ${LuckyNumber} and you recieve %100 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
+       return(`You're lucky number is ${LuckyNumber} and you recieve %100 off. You're total is $${TotalDiscount}. You're original price is $${price}`);
    } else {
-       alert(`you're luck number '${LuckyNumber}' is not valid`)
+       return(`you're luck number '${LuckyNumber}' is not valid`)
    }
 }
 
@@ -166,10 +165,9 @@ function calculateTotal(LuckyNumber, price){
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-let Totalbill = parseInt(prompt("What is your total bill?"))
-calculateTotal(luckyNumber, Totalbill);
+const luckyNumber = Math.floor(Math.random() * 6);
+const Totalbill = parseFloat(prompt("What is your total bill?"))
+alert(calculateTotal(luckyNumber, Totalbill));
 
 /**
  * TODO:
@@ -193,15 +191,17 @@ calculateTotal(luckyNumber, Totalbill);
 
 function MathStuff(number){
     if (number % 2 === 0){
-        alert(`You're number :${number} + 100 = ${number + 100}`)
         if(number > 0){
+            alert(`You're number :${number} + 100 = ${number + 100}`)
             alert(`You're number ${number} is a positive number`)
             alert("You're number is even steven 🤙🏼")
         } else if (number < 0){
+            alert(`You're number :${number} + 100 = ${number + 100}`)
             alert(`You're number ${number} is a negative number`)
             alert("You're number is even steven 🤙🏼")
         }else if ( number === 0) {
-            alert("You're number is 0 neither odd or even")
+            alert(`You're number :${number} + 100 = ${number + 100}`)
+            alert("You're number is 0 neither odd or even nor positive or negative")
         }
     } else {
         alert("You're number is odd todd 🤙🏼")
@@ -216,20 +216,106 @@ function MathStuff(number){
     }
 }
 
-function Prompt(confirmation){
+function UserPrompt(confirmation){
     if(confirmation){
         let number = parseInt(prompt("Enter a number"))
             if(isNaN(number)){
                 return alert("That is not a number dude ");
             }
         return MathStuff(number);
-    }else{
+    }else if (!confirmation){
         alert(window.open("https://www.youtube.com/watch?v=eZUR1SSNj6g", "_blank"))
     }
 }
-Prompt(confirm("Do you want to enter a number?"))
+UserPrompt(confirm("Do you want to enter a number?"))
+
+//================================= CONDITIONALS BONUSES
+//
+// Bonus 1
+// Create a function that prompts a user for their favorite day of the week and alerts a unique message based on the day.
+// - Catch any invalid inputs.
+// - Write the logic using if/else ifs and then refactor using a switch case
+//
+
+function PromptUser(){
+    let FavDay1 = prompt("whats your favorite day?");
+    if(FavDay1 === null){return PromptUser}
+    let FavDay = FavDay1.toLowerCase();
+    if (FavDay === "monday"){
+        alert("monday are you crazy?");
+    } else if ( FavDay === "tuesday"){
+        alert("taco tuesday");
+    } else if ( FavDay === "wednesday"){
+        alert("whiskey wednesday");
+    } else if ( FavDay === "thursday"){
+        alert("thirsty thursday");
+    } else if ( FavDay === "friday"){
+        alert("fun friday");
+    } else if ( FavDay === "saturday"){
+        alert("saturdays are for the boys");
+    } else if ( FavDay === "sundays"){
+        alert("Cowboys victory sunday!");
+    } else{
+        alert(`what in the world is ${FavDay}?`);
+    }
+
+}
+PromptUser();
+
+// Bonus 2
+// Create a function that prompts the user for an input and then alerts if the input is a number or not a number.
+// - use an if/else
+// - refactor to use a ternary operator
+//
+
+function isNum(number){
+    if( isNaN(number)){
+        return`you're number isn't a number`;
+    } else{
+        return `you're number ${number} is a number`;
+    }
+}
+alert(isNum(parseInt(prompt("enter a number"))));
 
 
+
+
+
+
+
+
+// Bonus 3
+// Create a function that prompts a user for a season (Spring, Summer, Fall (or Autumn), Winter). The function then alerts the months available in that season and then asks the user to pick a given month. After selecting the month, alert a unique message for the month.
+// - account for any invalid user input
+// - case of input should not matter
+// - accept both abbreviations and full names of the months
+
+
+function seasons(){
+    let userSeasonsReg = prompt("enter a season");
+    let userSeasons = userSeasonsReg.toLowerCase();
+}
+
+
+// GOLD STAR BONUS
+//
+// Create a distance unit conversion application.
+// Prompt the user for unit of measurement.
+// Prompt the user for a value.
+//
+// Prompt the user for a second unit of measurement to convert to.
+//
+// Possibly define multiple functions to convert: inchesToFeet, feetToMiles, milesToLightYears
+// then the opposite versions: lightYearsToMiles, milesToFeet, feetToInches
+//
+// Use these conversion functions to make the correct unit conversion
+//
+// Potentially, you will need a large switch case to account for the possible unit conversions,
+// i.e. what conversion functions will need to be called in and in what order.
+//
+// DOUBLE GOLD STAR BONUS
+//
+// Allow unit conversion to metric system units
 
 
 
