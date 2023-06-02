@@ -21,17 +21,27 @@
     addTen('bob'); // returns false
 
    */
+  // function addTen(input){
+  //   if(isNaN(input)){
+  //     return `your input ${input} is ${false} and not a number`;
+  //   } else {
+  //     return(parseInt(input) + 10);
+  //   }
+  // }
+  // console.log(addTen(prompt("enter a number")));
+
+  //^ typeof is the better solution
+
   function addTen(input){
-    if(isNaN(input)){
+    if(typeof (input) === 'number'){
+      return input +10;
+    }else{
       return false;
-    } else {
-      return(parseInt(input) + 10);
     }
   }
-  console.log(addTen(prompt("enter a number")))
-
-
-
+  console.log(addTen(0));
+  console.log(addTen(10));
+  console.log(addTen('bob'));
 
 
 </script>
