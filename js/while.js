@@ -1,12 +1,12 @@
-// function MultiplyBy2 () {
-//     let x =2;
-//
-//     while (x <= 65536){
-//         console.log(x);
-//         x =x * 2;
-//     }
-// }
-// MultiplyBy2();
+function MultiplyBy2 () {
+    let x =2;
+
+    while (x <= 65536){
+        console.log(x);
+        x = x * 2;
+    }
+}
+MultiplyBy2();
 
 /*
 An ice cream seller can't go home until she sells all of her cones. First write enough code that generates a random
@@ -40,7 +40,7 @@ function IceCream(){
         }
         for(let persons = 0; persons <=50; persons++){
             sold += conesBoughtPerPerson;
-            console.log(`${sold} cones sold, ${conesBoughtPerPerson} were bought`)
+            console.log(`${sold} cones sold, ${conesBoughtPerPerson} were bought, ${allCones - sold} is how many cones i have left`)
             if(sold === allCones) {
                 console.log("sold them all");
             }
