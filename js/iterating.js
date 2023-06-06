@@ -61,9 +61,9 @@
 
     console.log(second(names));
 
-    function third(x){
+    function last(x){
         return x[x.length - 1];
     }
 
-    console.log(third(names));
+    console.log(last(names));
 })();
