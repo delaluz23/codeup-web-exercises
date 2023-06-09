@@ -46,6 +46,13 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    //or you could do this
+    //person.sayHello = function(){
+    //  return `hello from ${this.firstName} ${this.lastname};
+    //}
+    //console.log(person.sayHello());
+
+
     console.log(persons.sayHello());
 
 
@@ -77,6 +84,8 @@
     // ryan bought 250
     // george bought 320
     //show name, amount before discount, total discount, and price after discount
+
+
 for(let i = 0; i < shoppers.length; i++) {
     if (shoppers[i].amount > 200) {
         console.log(`Hello ${shoppers[i].name}! You're total price is $${shoppers[i].amount}. You're total discount is ${shoppers[i].amount * .12}. You're price after discount is ${shoppers[i].amount - (shoppers[i].amount * .12)} `);
@@ -85,6 +94,10 @@ for(let i = 0; i < shoppers.length; i++) {
     }
 }
 
+    // or you can do this:
+    // shoppers.forEach((shopper) => {
+    // console.log(`${shopper.name} spent ${shopper.amount}.you're total after discount is ${shopper.amount  > 200 ? shopper.amount * .88 : shopper.amount} `)
+    // })
 
 
 
@@ -155,18 +168,6 @@ for(let i = 0; i<books.length; i++){
     console.log("authors last name: " + books[i].author.lastname);
     console.log("\n");
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -261,18 +262,7 @@ for(let i = 0; i<books.length; i++){
     }
     showBookInfo(prompt("enter a book title or author"))
 
-
-// const Bio= {
-//         firstname:"Jose",
-//         middlename:"luis",
-//         lastname:"De La Luz",
-//         suffix:" III",
-//         height:"5`11",
-//         ethnicity:"Hispanic",
-//         Weight:"190 lbs",
-//         listOfFears:["bugs", "only bugs thats it"],
-//     }
-//     console.log(Bio);
+    
 
 
 
