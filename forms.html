@@ -1,45 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Register With Us</title>
 </head>
 <body>
-  <form action="POST" action="https://request-inspector.glitch.me/">
-    <input type="email" placeholder="Enter Your Email" required>
-    <input type="password" placeholder="Enter Your Password" required>
-    <br>
-    <hr>
-    <textarea placeholder="Enter A Bio" COLS="50" ROWS="20" style="resize: none"></textarea>
+<form method="post" action="https://request-inspector.glitch.me/">
+    <section>
+        <label>
+            <input type="email" placeholder="Enter Your Email" value="email" required>
+        </label>
+        <label>
+            <input type="password" placeholder="Enter Your Password" value="email" required>
+        </label>
+    </section>
     <br>
     <hr>
     <section>
-      <span>How did you hear about us?</span>
-      <br>
-    <input type="radio" id="questionnaire1" name="billboard" value="Billboard">
-      <label for="questionnaire1">Billboard</label>
-      <input type="radio" id="questionnaire2" name="radio advertisement" value="Radio Advertisement">
-      <label for="questionnaire2">Radio Advertisement</label>
-      <br>
-      <input type="radio" id="questionnaire3" name="internet advertisement" value="Internet Advertisement">
-      <label for="questionnaire3">Internet Advertisement</label>
-      <input type="radio" id="questionnaire4" name="other" value="Other" checked>
-      <label for="questionnaire4">Other</label>
+        <label>
+            <textarea placeholder="Enter A Bio" COLS="50" ROWS="20" style="resize: none"></textarea>
+        </label>
+    </section>
+    <br>
+    <hr>
+    <section>
+        <span>How did you hear about us?</span>
+        <br>
+        <input type="radio" id="questionnaire1" name="billboard" value="Billboard">
+        <label for="questionnaire1">Billboard</label>
+        <input type="radio" id="questionnaire2" name="radio advertisement" value="Radio Advertisement">
+        <label for="questionnaire2">Radio Advertisement</label>
+        <br>
+        <input type="radio" id="questionnaire3" name="internet advertisement" value="Internet Advertisement">
+        <label for="questionnaire3">Internet Advertisement</label>
+        <input type="radio" id="questionnaire4" name="other" value="Other" checked>
+        <label for="questionnaire4">Other</label>
     </section>
     <hr>
     <section>
-      <label for="Web Browser">What Web Browser Are <strong>YOU</strong> Using?</label>
-      <select name="Web Browser" id="browsers">
-        <option value="Safari">Safari</option>
-        <option value="Chrome">Chrome</option>
-        <option value="FireFox">FireFox</option>
-        <option value="Other" selected>other</option>
-      </select>
+        <label>What Web Browser Are <strong>YOU</strong> Using?
+            <select name="Web Browser" id="browsers">
+                <option value="Safari">Safari</option>
+                <option value="Chrome">Chrome</option>
+                <option value="FireFox">FireFox</option>
+                <option value="Other" selected>other</option>
+            </select>
+        </label>
     </section>
     <hr>
     <input type="submit">
     <hr>
 
-  </form>
+</form>
 </body>
 </html>
