@@ -65,20 +65,58 @@ makeUpperCase(null) // returns false
 */
 
 
-  function makeUpperCase (x){
-    if(typeof(x) !== 'string'){
-      return false;
-    }else{
-      return  x.toUpperCase();
-    }
-  }
+  // function makeUpperCase (x){
+  //   if(typeof(x) !== 'string'){
+  //     return false;
+  //   }else{
+  //     return  x.toUpperCase();
+  //   }
+  // }
+  //
+  // console.log(makeUpperCase('cat')); // returns 'CAT'
+  // console.log(makeUpperCase('DoG')); // returns 'DOG'
+  // console.log(makeUpperCase('CODEUP')); // returns 'CODEUP'
+  // console.log(makeUpperCase(54)); // returns false
+  // console.log(makeUpperCase(true)); // returns false
+  // console.log(makeUpperCase(null)); // returns false
 
-  console.log(makeUpperCase('cat')); // returns 'CAT'
-  console.log(makeUpperCase('DoG')); // returns 'DOG'
-  console.log(makeUpperCase('CODEUP')); // returns 'CODEUP'
-  console.log(makeUpperCase(54)); // returns false
-  console.log(makeUpperCase(true)); // returns false
-  console.log(makeUpperCase(null)); // returns false
+
+
+
+
+
+
+
+
+
+  /*
+  June 12 2023
+Write a function, sumIsEqual, that takes in three inputs. The function should return
+true if the sum of the first two inputs are equal to the third input. If any of the
+inputs are not numbers, return false.
+
+sumIsEqual(1, 2, 3) // returns true
+sumIsEqual(2, 2, 4) // returns true
+sumIsEqual(10, 2, 12) // returns true
+sumIsEqual(10, false, 12) // returns false
+sumIsEqual('10', '2', 12) // returns false
+sumIsEqual('fred', 'bob, 'hello') // returns false
+   */
+
+
+function sumIsEqual(x,y,z){
+  console.log(x + y ===  parseFloat(z));
+}
+  sumIsEqual(1, 2, 3) // returns true
+  sumIsEqual(2, 2, 4) // returns true
+  sumIsEqual(10, 2, 12) // returns true
+  sumIsEqual(10, false, 12) // returns false
+  sumIsEqual('10', '2', 12) // returns false
+  sumIsEqual('fred', 'bob', 'hello') // returns false
+
+
+
+
 </script>
 
 </body>
