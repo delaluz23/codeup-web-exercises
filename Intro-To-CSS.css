@@ -1,0 +1,16 @@
+
+header{
+    background-color: bisque;
+    padding: 10px;
+}
+.menu-item{
+    display: inline-block;
+    color: #ca3a11;
+}
+#navigation{
+    border: 1px dashed red;
+}
+#navigation li{
+    display: inline-block;
+    color: green;
+}  
