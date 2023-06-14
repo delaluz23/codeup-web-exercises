@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 .message-info{
-    background-color: #cddeff;
+    background-color: #c4d6f5;
     color: #7374bf;
 }
 .message-success{
@@ -21,10 +21,14 @@ body, html {
     background-color: #f0cbcf;
     color: #9c4c5b;
 }
-div{
+.message{
     margin: 8px 20px;
     border-radius: 8px;
     padding: 8px;
     border: lightgray solid 2px;
     font-weight: bold;
+}
+.message:hover{
+    transition: 2s ease-out;
+    font-size: 20px;
 }
