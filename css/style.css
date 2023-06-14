@@ -1,4 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap');
 .fancy-header{
     color: purple;
     text-decoration: underline;
+    text-align: center;
 }
+h1, h2, h3, h4, h5, h6{
+    color: #d73cc6;
+    text-decoration: underline;
+}
+.main{
+    background-color: rgba(48, 232, 218, 0.8);
+    height: 100%;
+    background-image: url("https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+body{
+    margin: 0px;
+    height: 100%;
+    font-family: 'Advent Pro', sans-serif;
+}
+p{
+    text-align: center;
+}
+ul{
+    list-style-type: armenian;
+}
+td, tr{
+    font-size: 10px;
+    padding: 20px;
+}
+.anchor:link{
+     color: orange;
+}
+.anchor:visited{
+    color: bisque;
+}
+.anchor:hover{
+    color: #ca3a11;
+}
+.anchor:active{
+    color: greenyellow;
+}
+
