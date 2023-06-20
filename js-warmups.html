@@ -108,18 +108,42 @@ sumIsEqual('fred', 'bob, 'hello') // returns false
 
 
 
-function sumIsEqual(x,y,z){
-  console.log(x + y ===  z);
+// function sumIsEqual(x,y,z){
+//   console.log(x + y ===  z);
+// }
+//   sumIsEqual(1, 2, 3) // returns true
+//   sumIsEqual(2, 2, 4) // returns true
+//   sumIsEqual(10, 2, 12) // returns true
+//   sumIsEqual(10, false, 12) // returns false
+//   sumIsEqual('10', '2', 12) // returns false
+//   sumIsEqual('fred', 'bob', 'hello') // returns false
+
+/*
+June 20 2023
+================================= WARM UP
+
+Write a function, returnUserObject, that takes in three String arguments: a username, password, and email. The function should return a user object with username, password and email properties.
+
+returnUserObject('jreich', 'password123', 'jreich@email.com') // returns...
+
+{
+	username: 'jreich',
+	password: 'password123',
+	email: 'jreich@email.com'
 }
-  sumIsEqual(1, 2, 3) // returns true
-  sumIsEqual(2, 2, 4) // returns true
-  sumIsEqual(10, 2, 12) // returns true
-  sumIsEqual(10, false, 12) // returns false
-  sumIsEqual('10', '2', 12) // returns false
-  sumIsEqual('fred', 'bob', 'hello') // returns false
+
+Assume all inputs are non-empty strings. The order of the properties does not matter.
+*/
 
 
-
+  function returnUserObject(x,y,z){
+    return{
+      username: prompt(`whats your username?`),
+      password: prompt(`whats your password`),
+      email: prompt(`whats your email`)
+    }
+  }
+  console.log(returnUserObject())
 
 </script>
 
