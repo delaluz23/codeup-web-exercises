@@ -136,14 +136,43 @@ Assume all inputs are non-empty strings. The order of the properties does not ma
 */
 
 
-  function returnUserObject(x,y,z){
-    return{
-      username: prompt(`whats your username?`),
-      password: prompt(`whats your password`),
-      email: prompt(`whats your email`)
-    }
+  // function returnUserObject(x,y,z){
+  //   return{
+  //     username: prompt(`whats your username?`),
+  //     password: prompt(`whats your password`),
+  //     email: prompt(`whats your email`)
+  //   }
+  // }
+  // console.log(returnUserObject())
+  /*
+
+  June 21, 2023
+
+================================= WARM UP
+Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
+Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
+returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
+returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
+returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
+returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
+returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
+  */
+
+
+
+  function returnProduct ([x,y,z]){
+    return`${x} * ${y} * ${z} = ${x * y * z}`
   }
-  console.log(returnUserObject())
+
+  console.log(returnProduct([1, 2, 3]))
+  console.log(returnProduct([3, 3, 3]))
+  console.log(returnProduct([4, 1, 2]))
+  console.log(returnProduct([4, 0, 2]))
+  console.log(returnProduct([5, 3, 2gi]))
+
+
+
+
 
 </script>
 
