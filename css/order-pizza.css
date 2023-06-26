@@ -1,0 +1,17 @@
+.jd-hero{
+    min-height: 30vh;
+    background: url("https://i.pinimg.com/originals/62/e4/a3/62e4a3a68956b7f4a1a9bdfed3726a1b.jpg") center center ;
+    background-size: cover;
+}
+.jd-pizza-world{
+    font-size: 21px ;
+}
+.jd-order-online{
+    font-size: 14px ;
+}
+.jd-menu{
+    font-size: 13px ;
+}
+li{
+    list-style-type: none;
+}
