@@ -182,7 +182,7 @@ returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
 
 
   /*
-  Jun 27 2022
+  Jun 27 2023
 =============================== WARM UP
 
 Create a function, returnAvgSales, that takes in an array of sales data objects and returns the average of all
@@ -225,40 +225,123 @@ const salesData = [
 returnAvgSales(salesData) // returns 9.4
    */
 
-  function returnAvgSales (){
-    let average = 0;
-      for (let i = 0; i < salesData.length; i += 1) {
-        average += salesData[i].totalItemsSold;
-      }
-      return average / (salesData.length );
-  }
+  // // function returnAvgSales (){
+  // //   let average = 0;
+  // //     for (let i = 0; i < salesData.length; i += 1) {
+  // //       average += salesData[i].totalItemsSold;
+  // //     }
+  // //     return average / (salesData.length );
+  // // }
+  // //
+  // //
+  // //
+  // // const salesData = [
+  // //   {
+  // //     month: 'January',
+  // //     totalItemsSold: 0
+  // //   },
+  // //   {
+  // //     month: 'February',
+  // //     totalItemsSold: 5
+  // //   },
+  // //   {
+  // //     month: 'March',
+  // //     totalItemsSold: 2
+  // //   },
+  // //   {
+  // //     month: 'April',
+  // //     totalItemsSold: 10
+  // //   },
+  // //   {
+  // //     month: 'May',
+  // //     totalItemsSold: 30
+  // //   }
+  // // ];
+  // //
+  // console.log(returnAvgSales(salesData)); // returns 9.4
 
+  /*
+  JS WARMUP Jun 28 2023
+  ================================= WARM UP
 
+Create a function, returnAdmins, that takes in an array of user objects
+and returns an array of only the admin user objects. Assume the array
+has at least one user object and all elements have an isAdmin property.
 
-  const salesData = [
+Example:
+*/
+
+const users = [
+
     {
-      month: 'January',
-      totalItemsSold: 0
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
     },
     {
-      month: 'February',
-      totalItemsSold: 5
+        username: 'cindy123',
+        password: 'hello123',
+        email: 'cindy123@email.com',
+        isAdmin: false
     },
     {
-      month: 'March',
-      totalItemsSold: 2
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
     },
     {
-      month: 'April',
-      totalItemsSold: 10
-    },
-    {
-      month: 'May',
-      totalItemsSold: 30
+        username: 'kyle123',
+        password: 'letmein',
+        email: 'kyle123@email.com',
+        isAdmin: false
     }
-  ];
+]
 
-  console.log(returnAvgSales(salesData)); // returns 9.4
+// function returnAdmins(){
+//   let userAdmins = [];
+//   for(let i =0; i < users.length;i++ ){
+//     if(users[i].isAdmin === true){
+//       userAdmins.push(users[i]);
+//     }
+//   }
+//   return userAdmins;
+// }
+function returnAdmins(users){
+  const admins = [];
+  users.forEach(users =>{
+    if(users.isAdmin){
+      admins.push(users)
+    }
+  });
+  return admins;
+}
+console.log(returnAdmins(users))
+
+
+
+/*
+
+returnAdmins(users) returns...
+
+[
+
+    {
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
+    },
+    {
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
+    }
+]
+*/
+
 </script>
 
 </body>
