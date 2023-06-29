@@ -308,18 +308,18 @@ const users = [
 //   }
 //   return userAdmins;
 // }
-function returnAdmins(users){
-  const admins = [];
-  users.forEach(users =>{
-    if(users.isAdmin){
-      admins.push(users)
-    }
-  });
-  return admins;
-}
-console.log(returnAdmins(users))
-
-
+// function returnAdmins(users){
+//   const admins = [];
+//   users.forEach(users =>{
+//     if(users.isAdmin){
+//       admins.push(users)
+//     }
+//   });
+//   return admins;
+// }
+// console.log(returnAdmins(users))
+//
+//
 
 /*
 
@@ -341,6 +341,66 @@ returnAdmins(users) returns...
     }
 ]
 */
+/*
+JS WARMUP June 29th 2023
+================================= WARM UP
+
+Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
+If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+The function should return true if the neighborhood object is desireable and false otherwise.
+
+// example data...
+*/
+const neighborhood1 = {
+    neighborhood: "Lovely Estates",
+    medianHomePrice: 280000,
+    pool: true,
+    tennis: false,
+    crimeRate: "low",
+    schools: 22
+};
+
+const neighborhood2 = {
+    neighborhood: "Luminous Estates",
+    medianHomePrice: 270000,
+    pool: true,
+    tennis: false,
+    crimeRate: "high",
+    schools: 24
+}
+
+const neighborhood3 = {
+    neighborhood: "Oak Mountain",
+    medianHomePrice: 290000,
+    pool: false,
+    tennis: false,
+    crimeRate: "low",
+    schools: 24
+}
+
+const neighborhood4 = {
+    neighborhood: "Ginormous Acres",
+    medianHomePrice: 350000,
+    pool: true,
+    tennis: true,
+    crimeRate: "low",
+    schools: 27
+}
+function desirable(x){
+    if ( x.medianHomePrice < 300000 && x.crimeRate ==='low'  && x.schools >= 24 ){
+      return `${x.neighborhood} is desirable`
+    }else{
+      return `${x.neighborhood} is not desirable`
+    }
+}
+
+  console.log(desirable(neighborhood1));
+  console.log(desirable(neighborhood2));
+  console.log(desirable(neighborhood3));
+  console.log(desirable(neighborhood4));
+  
+
+
 
 </script>
 
