@@ -48,7 +48,7 @@
 
         // TODO: Uncomment the next line and get all list items
 
-        let listItems = document.getElementsByTagName('li') ;
+        let listItems = document.getElementsByTagName('li')
           console.log(listItems)
 
         // TODO: Set text color on every other list item to grey
@@ -59,16 +59,41 @@
            }
          }
 
-        // TODO: Set text color of li with dbid = 1 to blue
-        for (let i =0; i <listItems.length; i++){
-          if([i]===)
-          let blueli = listItems[i].getAttribute('dbid = 1')
-          console.log(blueli)
-        }
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+         /*
+          walkthrough
+          for(let i =0; i <listItems.length; i+=2){
+              listItems[i].style.color = 'grey';
+          */
 
+        // TODO: Set text color of li with dbid = 1 to blue
+
+        let blueLi = document.querySelector('li');
+         blueLi.style.color = 'blue';
+         /*
+         walkthrough
+         for (let i =0; i <listItems.length; i++){
+           if (listItems[i].getAttribute('data-dbid') == '1'{
+            listItems[i].style.color = 'blue'
+           }
+           if (i % 2 !== 0){
+             listItems[i].style.color = 'grey';
+           }
+         }
+
+
+         OR
+
+
+         document.querySelector('[data-dbid="1"]').style.color = 'blue'
+
+          */
+
+      // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let subParagraphs = document.getElementsByClassName('sub-paragraph') ;
+      console.log(subParagraphs)
+      console.log(typeof (subParagraphs))
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = "Mission accomplished!"
     })();
 </script>
 
