@@ -351,53 +351,101 @@ The function should return true if the neighborhood object is desireable and fal
 
 // example data...
 */
-const neighborhood1 = {
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: 22
-};
+// const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 22
+// };
+//
+// const neighborhood2 = {
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "high",
+//     schools: 24
+// }
+//
+// const neighborhood3 = {
+//     neighborhood: "Oak Mountain",
+//     medianHomePrice: 290000,
+//     pool: false,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 24
+// }
+//
+// const neighborhood4 = {
+//     neighborhood: "Ginormous Acres",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: 27
+// }
+// function desirable(x){
+//     if ( x.medianHomePrice < 300000 && x.crimeRate ==='low'  && x.schools >= 24 ){
+//       return `${x.neighborhood} is desirable`
+//     }else{
+//       return `${x.neighborhood} is not desirable`
+//     }
+// }
+//
+//   console.log(desirable(neighborhood1));
+//   console.log(desirable(neighborhood2));
+//   console.log(desirable(neighborhood3));
+//   console.log(desirable(neighborhood4));
 
-const neighborhood2 = {
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "high",
-    schools: 24
-}
+/*
+  JS WARMUP JUN 30 2023
+        ================================= WARM UP
 
-const neighborhood3 = {
-    neighborhood: "Oak Mountain",
-    medianHomePrice: 290000,
-    pool: false,
-    tennis: false,
-    crimeRate: "low",
-    schools: 24
-}
 
-const neighborhood4 = {
-    neighborhood: "Ginormous Acres",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: 27
-}
-function desirable(x){
-    if ( x.medianHomePrice < 300000 && x.crimeRate ==='low'  && x.schools >= 24 ){
-      return `${x.neighborhood} is desirable`
-    }else{
-      return `${x.neighborhood} is not desirable`
-    }
-}
+  Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
+  Assume at least one class object will be present in the input array with students property set to a valid positive integer.
+ */
 
-  console.log(desirable(neighborhood1));
-  console.log(desirable(neighborhood2));
-  console.log(desirable(neighborhood3));
-  console.log(desirable(neighborhood4));
+  //         let classes = [
+  //   {class: "6th grade history", students: 18},
+  //   {class: "7th grade history", students: 20},
+  //   {class: "8th grade history", students: 22},
+  //   {class: "4th grade history", students: 30},
+  //   {class: "10th grade history", students: 25}
+  // ];
+  //
+  //
+  // function returnLargestStudentCount(x) {
+  //   let y = x[0].students;
+  //   for (let i = 1; i < x.length; i++) {
+  //       if (y > x[i].students){
+  //
+  //       }else{
+  //         y = x[i].students;
+  //       }
+  //   }
+  //   return y;
+  }
+  /*
+
+  function returnLargestStudentCount(x) {
+    let highestStudentCount = 0;
+    for (let i = 0; i < x.length; i++){
+      if(highestStudentCount < classes[i].students){
+        highestStudentCount = classes[i].students
+        }
+        }
+        return highestStudentCount;
+  }
+
+   */
+
+
+  console.log(returnLargestStudentCount(classes)); // returns 30
+
+
 
 
 
