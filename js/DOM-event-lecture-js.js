@@ -6,7 +6,7 @@
 
 // When a user clicks the test button, log "test" in the console. (with pre-built function or anon function)
 
-const testBtn = document.getElementById('test-btn');
+// const testBtn = document.getElementById('test-btn');
 // testBtn.addEventListener("click", function (){
 //     console.log('test')
 // })
