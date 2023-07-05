@@ -427,7 +427,7 @@ The function should return true if the neighborhood object is desireable and fal
   //       }
   //   }
   //   return y;
-  }
+  // }
   /*
 
   function returnLargestStudentCount(x) {
@@ -443,7 +443,75 @@ The function should return true if the neighborhood object is desireable and fal
    */
 
 
-  console.log(returnLargestStudentCount(classes)); // returns 30
+  // console.log(returnLargestStudentCount(classes)); // returns 30
+
+
+
+
+
+
+
+  /*
+  July 5 2023
+  1. Create a function that prints 1 to 100.
+
+
+2. Create a function, fizzBuzz, that prints out all numbers from 1 to 100 but instead of printing
+numbers that are evenly divisible by 3, print 'fizz' and any numbers evenly divisible
+by 5, print 'buzz'. For any numbers that are evenly divisible by 3 AND 5, print 'fizzbuzz'.
+
+
+fizzBuzz() // prints...
+
+1
+2
+'fizz'
+4
+'buzz'
+'fizz'
+7
+8
+'fizz'
+'buzz'
+11
+'fizz'
+13
+14
+'fizzbuzz'
+etc...
+
+*/
+
+
+  // function OneToOneHundred(){
+  //   let  i = 1;
+  //   while (i <= 100){
+  //     console.log(i);
+  //     i++;
+  //   }
+  // }
+  //
+  // console.log(OneToOneHundred());
+
+
+
+
+  // Walkthrough
+  function fizzBuzz(){
+    for(let i =1; i<=100;i++){
+      if(i % 3 ===0 && i % 5 ===0){
+        console.log ('fizzBuzz');
+      } else if( i % 5 ===0){
+          console.log('buzz')
+      } else if(i % 3 ===0){
+        console.log('fizz')
+      } else{
+      console.log(i);
+      }
+    }
+  }
+  fizzBuzz();
+
 
 
 
