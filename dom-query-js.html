@@ -8,9 +8,9 @@
 
 <h1 id="main-header">Hello World!</h1>
 <button id="JS-cool">JavaScript Is Cool</button>
-<button id="Txt-Color">P COLOR</button>
-<button id="BG-Color">BACKGROUND COLOR</button>
-<button id="Font-Change">FONT CHANGE</button>
+<button id="Sub-Color">Sub Color</button>
+<button id="Er-Ot">ERR OTHER</button>
+<button id="Sub-Par">Sub-Paragraph</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -34,124 +34,157 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
 
-        let mainHeader = document.getElementById('main-header') ;
-         console.log(mainHeader);
+        let mainHeader = document.getElementById('main-header');
+        // console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        mainHeader.innerHTML = "JavaScript is Cool";
+        const JSCool = document.getElementById('JS-cool')
+        JSCool.addEventListener("click", () => {
+            if (ischanged) {
+                mainHeader.innerText = 'JavaScript is kinda cool'
+                ischanged = false;
+            } else {
+                mainHeader.innerHTML = "JavaScript is Cool";
+                ischanged = true;
+            }
+        })
 
         // TODO: Uncomment the next line and get the sub header element by id
 
-        let subHeader = document.getElementById('sub-header') ;
-      console.log(subHeader)
+        let subHeader = document.getElementById('sub-header');
+        console.log(subHeader)
 
         // TODO: Set the text color of subHeader to blue
-
-          subHeader.style.color = 'blue';
+        const SubColor = document.getElementById('Sub-Color')
+        SubColor.addEventListener('click', () => {
+            if (ischanged2) {
+                subHeader.style.color = 'black';
+                ischanged2 = false;
+            } else {
+                subHeader.style.color = 'blue';
+                ischanged2 = true;
+            }
+        })
 
         // TODO: Uncomment the next line and get all list items
 
         let listItems = document.getElementsByTagName('li')
-          console.log(listItems)
+        console.log(listItems)
 
         // TODO: Set text color on every other list item to grey
+        const EvOT = document.getElementById('Er-Ot')
+        EvOT.addEventListener('click', () => {
+                for (let i = 0; i < listItems.length; i++) {
+                    if (i % 2 !== 0) {
+                        listItems[i].style.color = 'grey';
+                    }
+                    let blueLi = document.querySelector('li');
+                    blueLi.style.color = 'blue';
+                }
+        })
 
-         for (let i =0; i <listItems.length; i++){
-           if (i % 2 !== 0){
+        /*
+         walkthrough
+         for(let i =0; i <listItems.length; i+=2){
              listItems[i].style.color = 'grey';
-           }
-         }
-
-         /*
-          walkthrough
-          for(let i =0; i <listItems.length; i+=2){
-              listItems[i].style.color = 'grey';
-          */
+         */
 
         // TODO: Set text color of li with dbid = 1 to blue
 
-        let blueLi = document.querySelector('li');
-         blueLi.style.color = 'blue';
-         /*
-         walkthrough
-         for (let i =0; i <listItems.length; i++){
-           if (listItems[i].getAttribute('data-dbid') == '1'{
-            listItems[i].style.color = 'blue'
-           }
-           if (i % 2 !== 0){
-             listItems[i].style.color = 'grey';
-           }
-         }
+        /*
+        walkthrough
+        for (let i =0; i <listItems.length; i++){
+          if (listItems[i].getAttribute('data-dbid') == '1'{
+           listItems[i].style.color = 'blue'
+          }
+          if (i % 2 !== 0){
+            listItems[i].style.color = 'grey';
+          }
+        }
+
+        OR
 
 
-         OR
+        document.querySelector('[data-dbid="1"]').style.color = 'blue'
 
+         */
 
-         document.querySelector('[data-dbid="1"]').style.color = 'blue'
-
-          */
-
-      // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        let subParagraphs = document.getElementsByClassName('sub-paragraph') ;
-      console.log(subParagraphs)
-      console.log(typeof (subParagraphs))
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        let subParagraphs = document.getElementsByClassName('sub-paragraph');
+        console.log(subParagraphs)
+        console.log(typeof (subParagraphs))
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        const ChangeSub = document.getElementById('Sub-Par')
+        ChangeSub.addEventListener('click', () => {
+            if (ischanged3){
+                subParagraphs[0].innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\n" +
+                    "    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim\n" +
+                    "    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut\n" +
+                    "    aliquip ex ea commodo consequat. Duis aute irure dolor in\n" +
+                    "    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n" +
+                    "    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n" +
+                    "    culpa qui officia deserunt mollit anim id est laborum."
+                ischanged3 = false;
+            } else{
         subParagraphs[0].innerText = "Mission accomplished!"
-
+                ischanged3 = true;
+        }})
 
 
         //DOM EVENTS
         let ischanged = false;
         let ischanged2 = false;
         let ischanged3 = false;
-        let ischanged4 = false;
-        const JS = document.getElementById('JS-cool')
-
-        JS.addEventListener('click', () =>{
-            if (ischanged){
-                mainHeader.innerText = 'JavaScript is COOL'
-                ischanged = false;
-            } else {
-            mainHeader.innerText = 'JavaScript is kinda cool'
-                ischanged = true;
-        }})
 
 
-
-        const color = document.getElementById('Txt-Color')
-
-
-        color.addEventListener("click", () => {
-            if (ischanged2){
-                subParagraphs[0].style.color = 'black'
-                ischanged2 = false;
-            } else {
-            subParagraphs[0].style.color = 'red'
-                ischanged2 = true;
-        }})
-
-        const BGColor = document.getElementById('BG-Color')
-
-        BGColor.addEventListener('click', () =>{
-            if (ischanged3){
-                document.body.style.backgroundColor = 'white'
-                ischanged3 = false;
-            } else{
-            document.body.style.backgroundColor = '#7FFFD4'
-                ischanged3 = true;
-        }})
-
-        const fontFantasy =  document.getElementById('Font-Change')
-
-        fontFantasy.addEventListener('click',() => {
-            if (ischanged4){
-                document.body.style.fontFamily = ('Arial')
-                ischanged4 = false;
-            } else{
-            document.body.style.fontFamily = ('Cursive')
-                ischanged4 = true;
-        }})
+        //IGNORE ALL THIS
+        // const JS = document.getElementById('JS-cool')
+        //
+        // JS.addEventListener('click', () =>{
+        //     if (ischanged){
+        //         mainHeader.innerText = 'JavaScript is COOL'
+        //         ischanged = false;
+        //     } else {
+        //     mainHeader.innerText = 'JavaScript is kinda cool'
+        //         ischanged = true;
+        // }})
+        //
+        //
+        //
+        // const color = document.getElementById('Txt-Color')
+        //
+        //
+        // color.addEventListener("click", () => {
+        //     if (ischanged2){
+        //         subParagraphs[0].style.color = 'black'
+        //         ischanged2 = false;
+        //     } else {
+        //     subParagraphs[0].style.color = 'red'
+        //         ischanged2 = true;
+        // }})
+        //
+        // const BGColor = document.getElementById('BG-Color')
+        //
+        // BGColor.addEventListener('click', () =>{
+        //     if (ischanged3){
+        //         document.body.style.backgroundColor = 'white'
+        //         ischanged3 = false;
+        //     } else{
+        //     document.body.style.backgroundColor = '#7FFFD4'
+        //         ischanged3 = true;
+        // }})
+        //
+        // const fontFantasy =  document.getElementById('Font-Change')
+        //
+        // fontFantasy.addEventListener('click',() => {
+        //     if (ischanged4){
+        //         document.body.style.fontFamily = ('Arial')
+        //         ischanged4 = false;
+        //     } else{
+        //     document.body.style.fontFamily = ('Cursive')
+        //         ischanged4 = true;
+        // }})
 
     })();
 </script>
