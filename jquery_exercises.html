@@ -19,6 +19,9 @@
     <li id="is" class="codeup">
         is
     </li>
+    <li>
+        uh oh
+    </li>
 </ul>
 <div id="here" class="codeup">
     here
@@ -53,6 +56,26 @@
       // let somethingValue = $('#something').html();
       // console.log(somethingValue);
       // alert(somethingValue);
+
+    //changing h1 when clicked to have a background of red
+      $('h1')
+          .on('click', function (){
+          $(this).css('background', 'red')
+      })
+      // changing font size of all p elements to 18px when double-clicked
+      $('p')
+          .on('dblclick', function (e){
+          $('#else').css('font-size', '18px')
+      })
+      //all li elements when hovered turn red and when hovered out turn to black
+      $('li')
+          .on('mouseenter', function (e){
+              $(e.target).css('color', 'red')
+          })
+          .on('mouseleave', function (e){
+              $(e.target).css('color', 'black')
+          })
+
   })
 
 </script>
