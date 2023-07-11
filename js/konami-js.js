@@ -5,7 +5,7 @@ let colors = ['hotpink', 'pink', 'deeppink', 'lightpink']
 //counter for color change
 let currentIndex = 0;
 //empty array to track user input
-let keyPressedArray =[];
+let keyPressedArray = [];
 //empty variable to display text
 let DisplayText;
 //return white
@@ -13,9 +13,9 @@ let x = ['white'];
 //to stop interval
 let intervalID;
 
-// function to check indexes of array match to konami code
-function change (e){
-   intervalID = setInterval(function () {
+//function to change background colors for konami code
+function change(e) {
+    intervalID = setInterval(function () {
         $('body').css({
             backgroundColor: e[currentIndex]
         });
@@ -41,6 +41,7 @@ function eventListener(e) {
     DisplayText = document.querySelector('#display-code').textContent = keypressed;
 }
 
+// function to check indexes of array match to konami code
 function konamiCode(code) {
     if (code[0] === 'ArrowUp' &&
         code[1] === 'ArrowUp' &&
@@ -54,10 +55,9 @@ function konamiCode(code) {
         code[9].toLowerCase() === 'a'
     ) {
 
-       $('body').css('background-color', change(colors))
+        $('body').css('background-color', change(colors))
 
         console.log("i did it")
-//function to change background colors for konami code
 
     }
     //unlimited ammo cheat code
@@ -81,30 +81,30 @@ function konamiCode(code) {
         code[16].toLowerCase() === 'b' &&
         code[17].toLowerCase() === 'l' &&
         code[18].toLowerCase() === 'b'
-    ){
+    ) {
         let GTA = 'https://media.tenor.com/5I5OR7HikLsAAAAd/gta-gta-sa.gif'
         $('body').css("background-image", "url('" + GTA + "')")
-    } else if(
+    } else if (
+        //zeldas lullaby
         code[0] === 'ArrowLeft' &&
         code[1] === 'ArrowUp' &&
         code[2] === 'ArrowRight' &&
         code[3] === 'ArrowLeft' &&
         code[4] === 'ArrowUp' &&
         code[5] === 'ArrowRight'
-    )
-    {
+    ) {
         window.open('https://www.youtube.com/watch?v=EPhfbtjqWM8', '_blank');
         let link = 'https://i.redd.it/fptm0i554ld71.gif'
-        $('body').css('background-image', "url('"+ link +"')")
+        $('body').css('background-image', "url('" + link + "')")
 
 
-    }
-    else {
-
+    } else {
+        //resets page to default
         $('#reset').on("click", function () {
             clearInterval(intervalID);
-            $("body").css("background-color", 'white')
-            $("body").css("background-image", 'unset')
+            $("body")
+                .css("background-color", 'white')
+                .css("background-image", 'unset')
             $("#display-code").html("");
             keyPressedArray = []
             keypressed = ""

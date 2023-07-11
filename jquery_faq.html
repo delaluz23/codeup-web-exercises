@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery FAQ exercise</title>
+    <link rel="stylesheet" href="css/jquery_faq-styelsheet.css">
+</head>
+<body>
+
+
+<h1>Park National facts</h1>
+
+<dl>
+    <dt>park</dt>
+        <dd class="invisible">is a park</dd>
+        <dd class="invisible">or is it?</dd>
+        <dd class="invisible">it may be</dd>
+        <dd class="invisible">or it may not be</dd>
+        <dd class="invisible">yolo</dd>
+    <dt>park2</dt>
+        <dd class="invisible">is a park</dd>
+        <dd class="invisible">or is it?</dd>
+        <dd class="invisible">it may be</dd>
+        <dd class="invisible">or it may not be</dd>
+        <dd class="invisible">yolo</dd>
+</dl>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    let DDSelector = document.querySelectorAll('dd');
+
+    //jquery version
+    // $('body').append(`
+    //     <a> show </a>
+    // `);
+    // $('a').on('click', () => {
+    //     $(DDSelector).toggleClass('invisible')
+    // });
+    // $('dt').on('click', function (){
+    //     $(this).toggleClass('highlight')
+    // });
+
+    //js version
+    const link = document.createElement('a');
+    link.innerText = 'show';
+
+    const body = document.querySelector('body');
+    body.appendChild(link)
+
+    link.addEventListener('click', () => {
+        DDSelector.forEach((element) =>{
+            element.classList.toggle('invisible')
+            })
+    });
+
+    const dtElements = document.querySelectorAll('dt');
+    dtElements.forEach((dt) => {
+        dt.addEventListener('click', function (e){
+            e.target.classList.toggle('highlight')
+        })
+    })
+
+
+    // my js version if i had a button
+    // let isClicked = false;
+    // hideCheck.addEventListener('click', () => {
+    //     if (!isClicked) {
+    //         for (let i = 0; i < DDSelector.length; i++) {
+    //             DDSelector[i].style.display = 'none'
+    //         }
+    //         isClicked = true;
+    //     } else{
+    //         isClicked = false;
+    //         for (let i = 0; i < DDSelector.length; i++) {
+    //             DDSelector[i].style.display = 'block'
+    //         }
+    //     }
+    // })
+
+
+
+</script>
+</body>
+</html>
