@@ -84,7 +84,22 @@ function konamiCode(code) {
     ){
         let GTA = 'https://media.tenor.com/5I5OR7HikLsAAAAd/gta-gta-sa.gif'
         $('body').css("background-image", "url('" + GTA + "')")
-    } else {
+    } else if(
+        code[0] === 'ArrowLeft' &&
+        code[1] === 'ArrowUp' &&
+        code[2] === 'ArrowRight' &&
+        code[3] === 'ArrowLeft' &&
+        code[4] === 'ArrowUp' &&
+        code[5] === 'ArrowRight'
+    )
+    {
+        window.open('https://www.youtube.com/watch?v=EPhfbtjqWM8', '_blank');
+        let link = 'https://i.redd.it/fptm0i554ld71.gif'
+        $('body').css('background-image', "url('"+ link +"')")
+
+
+    }
+    else {
 
         $('#reset').on("click", function () {
             clearInterval(intervalID);

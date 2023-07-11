@@ -11,3 +11,15 @@ body {
     width: 100%;
     height: 100%;
 }
+.jd-header{
+    font-family: monospace;
+    font-size: 3em;
+    animation: color-change 1s infinite;
+}
+@keyframes color-change {
+    0% { color: mediumpurple; }
+    25% { color: purple; }
+    50% { color: rebeccapurple; }
+    75% { color: blueviolet; }
+    100% { color: blue; }
+}
