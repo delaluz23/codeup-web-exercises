@@ -4,3 +4,46 @@
 .highlight{
     background-color: gray;
 }
+.picFrame1{
+    border: solid 15px rosybrown;
+}
+.pic1{
+    height: 200px;
+    width: 200px;
+    background-color: saddlebrown;
+}
+.picFrame2{
+    border: solid 15px black;
+}
+.pic2{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+
+}
+.picFrame3{
+    border: solid 15px yellow;
+}
+.pic3{
+    height: 200px;
+    width: 200px;
+    background-color: green;
+
+}
+.lineImages{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/*css for vanilla*/
+
+.backgroundYellow {
+    background-color: yellow;
+}
+.bold{
+    font-weight: bolder;
+}
+.blue{
+    color: blue;
+}

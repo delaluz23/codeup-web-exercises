@@ -12,23 +12,95 @@
 
 <dl>
     <dt>park</dt>
-        <dd class="invisible">is a park</dd>
-        <dd class="invisible">or is it?</dd>
-        <dd class="invisible">it may be</dd>
-        <dd class="invisible">or it may not be</dd>
-        <dd class="invisible">yolo</dd>
+    <dd class="invisible">is a park</dd>
+    <dd class="invisible">or is it?</dd>
+    <dd class="invisible">it may be</dd>
+    <dd class="invisible">or it may not be</dd>
+    <dd class="invisible">yolo</dd>
     <dt>park2</dt>
-        <dd class="invisible">is a park</dd>
-        <dd class="invisible">or is it?</dd>
-        <dd class="invisible">it may be</dd>
-        <dd class="invisible">or it may not be</dd>
-        <dd class="invisible">yolo</dd>
+    <dd class="invisible">is a park</dd>
+    <dd class="invisible">or is it?</dd>
+    <dd class="invisible">it may be</dd>
+    <dd class="invisible">or it may not be</dd>
+    <dd class="invisible">yolo</dd>
 </dl>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script>
-    let DDSelector = document.querySelectorAll('dd');
 
-    //jquery version
+
+<button id="yellow">something</button>
+
+<h3>one</h3>
+<ul>
+    <li>
+        stuff
+    </li>
+    <li>
+        stuffing
+    </li>
+    <li>
+        stuff
+    </li>
+    <li>
+        stuffing
+    </li>
+</ul>
+<h3>two</h3>
+<ul>
+    <li>
+        cuff
+    </li>
+    <li>
+        cuffing
+    </li>
+    <li>
+        cuff
+    </li>
+    <li>
+        cuffing
+    </li>
+</ul>
+<h3>three</h3>
+<ul>
+    <li>
+        buff
+    </li>
+    <li>
+        buffing
+    </li>
+    <li>
+        buff
+    </li>
+    <li>
+        buffing
+    </li>
+</ul>
+
+
+<!-- jquery traversing bonus -->
+<div class="lineImages frames">
+    <div class="picFrame1 pic1">
+    </div>
+    <div class="picFrame2 pic2">
+        two
+    </div>
+    <div class="picFrame3 pic3">
+        three
+    </div>
+</div>
+
+
+<div class="lineImages">
+    <button id="one">move one to two</button>
+    <button id="two">move to three</button>
+    <button id="three">move to one</button>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    // let DDSelector = document.querySelectorAll('dd');
+
+    // //jquery version
     // $('body').append(`
     //     <a> show </a>
     // `);
@@ -39,25 +111,25 @@
     //     $(this).toggleClass('highlight')
     // });
 
-    //js version
-    const link = document.createElement('a');
-    link.innerText = 'show';
-
-    const body = document.querySelector('body');
-    body.appendChild(link)
-
-    link.addEventListener('click', () => {
-        DDSelector.forEach((element) =>{
-            element.classList.toggle('invisible')
-            })
-    });
-
-    const dtElements = document.querySelectorAll('dt');
-    dtElements.forEach((dt) => {
-        dt.addEventListener('click', function (e){
-            e.target.classList.toggle('highlight')
-        })
-    })
+    // //js version
+    // const link = document.createElement('a');
+    // link.innerText = 'show';
+    //
+    // const body = document.querySelector('body');
+    // body.appendChild(link)
+    //
+    // link.addEventListener('click', () => {
+    //     DDSelector.forEach((element) => {
+    //         element.classList.toggle('invisible')
+    //     })
+    // });
+    //
+    // const dtElements = document.querySelectorAll('dt');
+    // dtElements.forEach((dt) => {
+    //     dt.addEventListener('click', function (e) {
+    //         e.target.classList.toggle('highlight')
+    //     })
+    // })
 
 
     // my js version if i had a button
@@ -76,6 +148,86 @@
     //     }
     // })
 
+
+    // //jquery traversing exercise
+    // $('button').on('click', () => {
+    //     $('li').last().css('background-color', 'yellow');
+    // })
+    //
+    // $('h3').on('click', function () {
+    //     $(this).next('ul').find('li').css('font-weight', 'bold')
+    // })
+    // $('li').on('click', function () {
+    //     $(this).parent('ul').children().first().css('color', 'lightblue')
+    // })
+    //
+    // //jquery traversing exercise bonus
+    // $('#one').on('click', () => {
+    //     $('.frames'). children().first().addClass('pic2');
+    //     $('.frames'). children().first().removeClass('pic1');
+    //     $('.frames'). children().first().next().addClass('pic1');
+    //     $('.frames'). children().first().next().removeClass('pic2');
+    // })
+    // $('#two').on('click', () => {
+    //
+    // })
+    // $('#three').on('click', () => {
+    //
+    // })
+
+
+
+    //vanilla js versions walkthrough
+
+    //variables
+        let yellowButton = document.querySelector('#yellow');
+        let ulElements = document.querySelectorAll('ul');
+        let h3Elements = document.querySelectorAll('h3')
+        let liElement = document.querySelectorAll('li')
+
+
+    //functions
+    function  handleMakeYellowClick () {
+        ulElements.forEach((element) => {
+            element.lastElementChild.classList.toggle('yellow')
+        })
+    }
+
+    function handleMakeBoldClick (e){
+        let liElementCollection = e.target.nextElementSibling.children;
+        Array.from(liElementCollection).forEach((liElement) =>{
+            liElement.classList.add('bold')
+        })
+    }
+    function handleMakeBlueClick(e){
+        let clickedParent = e.target.parentElement
+        clickedParent.firstChild.classList.add('blue')
+    }
+
+
+
+
+
+    //events
+    yellowButton.addEventListener('click', handleMakeYellowClick);
+    h3Elements.forEach((h3Element) => {
+        h3Element.addEventListener('click', handleMakeBoldClick)
+    })
+    liElement.forEach((li) => {
+        li.addEventListener('click', handleMakeBlueClick)
+    })
+
+    //vanilla js bonus
+
+    //variables
+
+
+    //functions
+
+
+
+
+    //events
 
 
 </script>
