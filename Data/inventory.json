@@ -30,5 +30,13 @@
     "tool"
   ],
   "price": 10
-}
+},
+  {
+    "title": "something",
+    "quantity": 420,
+    "categories": [
+      "weapon"
+    ],
+    "price": 1000000
+  }
 ]

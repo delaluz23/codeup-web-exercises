@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+
+<div id="posts">
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <h2 class="header">header</h2>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <h5 class="category">category</h5>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <h5 class="date">date</h5>-->
+<!--        </tr>-->
+<!--        <td>-->
+<!--            <p class="content">content</p>-->
+<!--        </td>-->
+
+<!--    </table>-->
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+    $(() => {
+        //global variables
+        const blogpostcontainer = document.querySelector('#posts')
+
+        //functions
+
+        function loadblogpost (){
+        $.ajax('Data/blog.json').done((blogs) => {
+        console.log(blogs)
+            renderblogpost(blogs)
+        })
+        }
+        function renderblogpost(blogpostlist){
+            blogpostcontainer.innerHTML = ''
+            for(let blogpost of blogpostlist){
+                blogpostcontainer.innerHTML = `
+                <h1>${blogpost.title}</h1>
+                <h2>${blogpost.date}</h2>
+                <p>${blogpost.content}</p>
+                <p>${blogpost.categories}</p>
+                `;
+                blogpostcontainer.appendChild(blogpostcontainer)
+            }
+        }
+        loadblogpost()
+    })();
+</script>
+</body>
+</html>
