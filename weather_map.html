@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/weather_map.css">
+
+    <!--    Mapbox JS-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <!--    Mapbox CSS-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'/>
+
+</head>
+<body>
+<!-- start of header/nav -->
+<div class="bg-black opacity-75">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="d-flex justify-content-center text-white">Welcome</h1>
+            </div>
+        </div>
+    </div>
+    <!-- end of header/nav -->
+    <!-- start of search bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3 d-flex justify-content-center">
+                    <button id="submit" class="btn btn-outline-secondary" type="button">Search
+                    </button>
+                    <input id="user-location" type="text" class="form-control" placeholder="Enter a city name"
+                           aria-label="Example text with button addon"
+                           aria-describedby="button-addon1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of search bar -->
+    <!-- start of custom line break -->
+    <div style="border-bottom: black solid 1px"></div>
+    <!-- end of custom line break -->
+</div>
+<!-- end of header/nav -->
+<!-- start of cards to display weather info -->
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="card todays-forcast">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of cards to display weather info-->
+<!-- map-->
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div id="map" ></div>
+        </div>
+    </div>
+</div>
+<!-- end of map-->
+
+<script src="js/keys.js"></script>
+<script src="js/min-max-temps.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/weather_map_js.js"></script>
+</body>
+</html>
