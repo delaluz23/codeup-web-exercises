@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM warmups</title>
+</head>
+<body>
+<!--DOM Warm Up-->
+<!--July 19 2023-->
+<!--1. create a file called `dom-warmups.html` (add script tags and jQuery)-->
+<!--2. add a button to the html-->
+<button id="bgColor">click here</button>
+<!--3. when the button is clicked, change the background color of the page to your favorite color-->
+
+</body>
+<script>
+  // DOM Warm Up
+  // July 19, 2023
+  let button = document.querySelector('#bgColor')
+  button.addEventListener('click', () =>{
+    console.log('clicked')
+    document.body.style.backgroundColor = 'black'
+  })
+
+</script>
+</html>
