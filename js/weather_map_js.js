@@ -34,7 +34,13 @@ let marker = new mapboxgl.Marker({
     .setLngLat([-98.4916, 29.4252])
     .addTo(map)
 
+//keeping track of markers lat and lon
+let markerLatLng;
 
+
+//control for map to zoom in/out and rotate
+const navControl = new mapboxgl.NavigationControl();
+map.addControl(navControl, 'top-right');
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -71,10 +77,55 @@ function initializeMap() {
 
 
 //might delete
+// function dragMarkerLocation(){
+//     marker.setLngLat([markerLatLng[0].lon, markerLatLng[0].lat])
+//     map.flyTo([markerLatLng[0].lon, markerLatLng[0].lat])
+//     city_name =
+// }
 
 
-
-
+//function to change background to todays weather
+function todaysWeather (iconnum){
+    if (iconnum === '01d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg')"
+    }
+    //few clouds bg
+    else if (iconnum === '02d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg')"
+    }
+    //scattered clouds bg
+    else if (iconnum === '03d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/8579644/pexels-photo-8579644.jpeg')"
+    }
+    //broken clouds bg
+    else if (iconnum === '04d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/8996941/pexels-photo-8996941.jpeg')"
+    }
+    //shower rain bg
+    else if (iconnum === '09d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/2838561/pexels-photo-2838561.jpeg')"
+    }
+    //rain bg
+    else if (iconnum === '10d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg')"
+    }
+    //thunderstorm bg
+    else if (iconnum === '11d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg')"
+    }
+    //snow bg
+    else if (iconnum === '13d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/3462588/pexels-photo-3462588.jpeg')"
+    }
+    //mist bg
+    else if (iconnum === '50d') {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/1743392/pexels-photo-1743392.jpeg')"
+    }
+    //fault bg
+    else {
+        body.style.backgroundColor = 'lightblue'
+    }
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -101,13 +152,14 @@ document.addEventListener('keypress', (event) => {
 
 //marker with tracking
 marker.on('dragend', function () {
-    let markerLatLng = [{
+     markerLatLng = [{
         lat: marker.getLngLat().lat,
         lng: marker.getLngLat().lng
     }]
     console.log(markerLatLng)
     return markerLatLng;
 })
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -168,46 +220,7 @@ function fetchData() {
                 </div>
             `;
             //dynamic background to match todays weather
-            //clear sky bg
-            if (data.list[0].weather[0].icon === '01d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg')"
-            }
-            //few clouds bg
-            else if (data.list[0].weather[0].icon === '02d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg')"
-            }
-            //scattered clouds bg
-            else if (data.list[0].weather[0].icon === '03d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/8579644/pexels-photo-8579644.jpeg')"
-            }
-            //broken clouds bg
-            else if (data.list[0].weather[0].icon === '04d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/8996941/pexels-photo-8996941.jpeg')"
-            }
-            //shower rain bg
-            else if (data.list[0].weather[0].icon === '09d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/2838561/pexels-photo-2838561.jpeg')"
-            }
-            //rain bg
-            else if (data.list[0].weather[0].icon === '10d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/2448749/pexels-photo-2448749.jpeg')"
-            }
-            //thunderstorm bg
-            else if (data.list[0].weather[0].icon === '11d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg')"
-            }
-            //snow bg
-            else if (data.list[0].weather[0].icon === '13d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/3462588/pexels-photo-3462588.jpeg')"
-            }
-            //mist bg
-            else if (data.list[0].weather[0].icon === '50d') {
-                body.style.backgroundImage = "url('https://images.pexels.com/photos/1743392/pexels-photo-1743392.jpeg')"
-            }
-            //fault bg
-            else {
-                body.style.backgroundColor = 'lightblue'
-            }
+            todaysWeather(data.list[0].weather[0].icon);
             // changing map to location
             let lat = data.city.coord.lat
             let lon = data.city.coord.lon
