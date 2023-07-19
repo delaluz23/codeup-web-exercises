@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="js/keys.js"></script>
+  <script src="js/mapbox-geocoder-utils.js"></script>
+  <script src='h ttps://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
-$END$
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGVsYWx1ejIzIiwiYSI6ImNsazJzN3NmcDAwd2kzZXF3dDV0ajl1OTQifQ.EG3eELytMiv8XXh7CH5uvw';
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9, // starting zoom
+  });
+</script>
 </body>
 </html>

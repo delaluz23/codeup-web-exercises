@@ -23,25 +23,58 @@ let todaysForcast = document.querySelector('.todays-forcast')
 //targeting the body for interactive background
 const body = document.querySelector('body')
 
+//intitializing map
+const map = initializeMap();
+
+//marker
+let marker = new mapboxgl.Marker({
+    'color': "black",
+    draggable: true
+})
+    .setLngLat([-98.4916, 29.4252])
+    .addTo(map)
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /*
 Functions
  */
-
 /////////////////////////////////////////////////////////////////////////////////////////
 
+//getting open weather api
 function getWeatherURL2(cityName) {
     return `${OPEN_WEATHER_URL}?q=${cityName}&appid=${OPEN_WEATHER_APPID}&units=imperial
 `
 }
 
 
+//converting api dates to actual dates
 function convertDateString(dateString) {
     let date = new Date(dateString);
     let formattedDate = `${date.toLocaleString('en-US', {month: 'long'})} ${date.getDate()}, ${date.getFullYear()}`;
     return formattedDate;
 }
+
+//displaying map
+function initializeMap() {
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+
+    const mapOptions = {
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v12',
+        zoom: 10,
+        center: [-98.4916, 29.4252],
+    }
+    return new mapboxgl.Map(mapOptions);
+}
+
+
+//might delete
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -66,6 +99,16 @@ document.addEventListener('keypress', (event) => {
     }
 });
 
+//marker with tracking
+marker.on('dragend', function () {
+    let markerLatLng = [{
+        lat: marker.getLngLat().lat,
+        lng: marker.getLngLat().lng
+    }]
+    console.log(markerLatLng)
+    return markerLatLng;
+})
+
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -80,55 +123,13 @@ function fetchData() {
     console.log(URL);
     $.ajax(URL)
         .done(data => {
-// function to make map appear
-            function initializeMap(city_name) {
-                // ...
-
-                const map = new mapboxgl.Map(mapOptions);
-                map.on('load', () => {
-                    // ...
-
-                    // Add a draggable marker
-                    const marker = new mapboxgl.Marker({
-                        draggable: true
-                    })
-                        .setLngLat(coordinates)
-                        .addTo(map);
-
-                    // Update city_name when marker is dragged
-                    marker.on('dragend', () => {
-                        const lngLat = marker.getLngLat();
-                        reverseGeocode(lngLat);
-                    });
-
-                    // ...
-
-                    function reverseGeocode(lngLat) {
-                        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${lngLat.lng},${lngLat.lat}.json?access_token=${mapboxgl.accessToken}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                const placeName = data.features[0].place_name;
-                                city_name = placeName;
-                                locationInputContainer.value = city_name; // Update the input field value with the new city_name
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                            });
-                    }
-                });
-
-                // ...
-            }
-
-
-
             console.log(data);
             let dayOneImg = (`https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}.png`)
             let dayTwoImg = (`https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}.png`)
             let dayThreeImg = (`https://openweathermap.org/img/wn/${data.list[16].weather[0].icon}.png`)
             let dayFourImg = (`https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}.png`)
             let dayFiveImg = (`https://openweathermap.org/img/wn/${data.list[32].weather[0].icon}.png`)
-            //inputing five day forecast
+            //inputing five-day forecast
             todaysForcast.innerHTML = `
                 <div class="container ">
                      <div class="row">
@@ -168,7 +169,6 @@ function fetchData() {
             `;
             //dynamic background to match todays weather
             //clear sky bg
-            console.log(data.list[0].weather[0])
             if (data.list[0].weather[0].icon === '01d') {
                 body.style.backgroundImage = "url('https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg')"
             }
@@ -208,14 +208,21 @@ function fetchData() {
             else {
                 body.style.backgroundColor = 'lightblue'
             }
+            // changing map to location
+            let lat = data.city.coord.lat
+            let lon = data.city.coord.lon
+            console.log(lat, lon)
+            map.flyTo({
+                center: [lon, lat],
+            })
+            marker.setLngLat([lon, lat])
         })
         .fail(
-            todaysForcast.innerHTML = (`
+            todaysForcast.innerHTML = `
             <div class="d-flex justify-content-center align-items-center">
                 <h1>That is not a city</h1>
             </div>
-            `),
-            map.style = 'hidden'
+            `
         );
 }
 
