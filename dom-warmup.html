@@ -12,18 +12,54 @@
 <!--July 19 2023-->
 <!--1. create a file called `dom-warmups.html` (add script tags and jQuery)-->
 <!--2. add a button to the html-->
-<button id="bgColor">click here</button>
+<!--<button id="bgColor">click here</button>-->
 <!--3. when the button is clicked, change the background color of the page to your favorite color-->
+
+
+<!--DOM Warm Up-->
+<!--July 20 2023-->
+<h3>The sum is: <span id="sum-output">0</span></h3>
+<label for="number">Number</label>
+<input id="number" type="number" name="number" min="0" max="5" value="0">
+<button id="add-btn">Add</button>
+
 
 </body>
 <script>
-  // DOM Warm Up
-  // July 19, 2023
-  let button = document.querySelector('#bgColor')
-  button.addEventListener('click', () =>{
-    console.log('clicked')
-    document.body.style.backgroundColor = 'black'
-  })
+    // // DOM Warm Up
+    // // July 19, 2023
+    // let button = document.querySelector('#bgColor')
+    // button.addEventListener('click', () =>{
+    //   console.log('clicked')
+    //   document.body.style.backgroundColor = 'black'
+    // })
 
+    //DOM Warm Up
+    //July 20, 2023
+    // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span when the button is clicked
+    //target input attribute
+    let input = document.querySelector('#number')
+    //targeting span with sum output
+    let sumOutput = document.querySelector('#sum-output')
+    //targeting add button
+    let addBTN = document.querySelector('#add-btn')
+    //blank variable to add min max too
+    let num;
+    //targeting number inside of span to add too
+    let numAdd = document.querySelector(`#sum-output`).innerHTML;
+
+    console.log(input, 'input')
+    // event listener to change num value to inputed number between min/max
+    input.addEventListener('change', () => {
+        num = input.value
+        console.log(num, 'number on input')
+    })
+    //event listener to store the result of the number in the span + the input
+    addBTN.addEventListener('click', () => {
+        let result = parseInt(numAdd) + parseInt(num);
+        sumOutput.innerHTML = result
+        numAdd = result
+        console.log(numAdd, 'value of span')
+    })
 </script>
 </html>
