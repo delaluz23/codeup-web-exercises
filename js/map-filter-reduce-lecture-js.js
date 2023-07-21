@@ -23,11 +23,13 @@
             //     }
             // }
             // console.log(housesTwoBedsPlus)
+
+
             //using filter mehtod to filter houses with ounly two beds plus
-            // const housesTwoBedsPlus = houses.filter(house => {
-            //     return parseFloat(house.beds) >= 2;
-            // })
-            // console.log(housesTwoBedsPlus)
+            const housesTwoBedsPlus = houses.filter(house => {
+                return parseFloat(house.beds) >= 2;
+            })
+            console.log(housesTwoBedsPlus)
 
             //map method
             //transforms each element in an array
